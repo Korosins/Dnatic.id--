@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Dnatic</title>
+    <style>
+#loader {
+    position: fixed; /* Menempatkan loader di atas konten halaman */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Latar belakang putih */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Memastikan loader berada di atas semua elemen lain */
+    transition: opacity 0.5s ease-in-out; /* Efek transisi untuk memudar */
+}
+
+.loading-logo {
+    width: 100px;
+    animation: beat 1s ease-in-out infinite; /* Animasi detak */
+    transform-origin: center; /* Titik pusat transformasi */
+}
+
+@keyframes beat {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            color: black;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: grey;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        /* Tambahkan style untuk header dan footer jika diperlukan */
+        header {
+            background-color: black;
+            color: black;
+            padding: 20px 0;
+        }
+
+        header .container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 100px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+            border-radius: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            font-size: 1.2em;
+        }
+
+        nav ul li a {
+            color: white;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #1abc9c;
+        }
+
+        .founder img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Foto mengisi area, dipotong jika perlu */
+    /* ... gaya lain ... */
+}
+
+        footer {
+            background-color: black;
+            color: black;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+        .logo img {
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+    transition: transform 1s ease-in-out; /* Transisi untuk animasi */
+}
+
+.logo img.rotate {
+    transform: rotate(360deg); /* Putar 360 derajat */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="logo dnatic.id">
+            </div>
+            <h1>About us</h1>
+            <nav>
+                <ul>
+                    <li><a href="dnatic.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Dnatic.id</h1>
+g di kembangkan oleh anak nusantara, kami percaya bahwa lagu nusantara tidak kalah saing dari lagu diluar sana makanya kami disini sebagai founder dnatic.id akan teru        <p>
+            Dnatic.id adalah platform musik nusantara yans berkembang.
+        </p>
+        <p>
+            Kami percaya bahwa musik adalah bahasa universal yang menghubungkan orang-orang dari berbagai latar belakang. Tim kami terdiri dari para penggemar musik yang bersemangat dan ahli dalam industri musik, yang bekerja keras untuk menyajikan konten yang relevan dan menarik.
+        </p>
+        <p>
+            di dnatic.id kalian akan menemukan experince yang berbeda dengan platform musik lainya yang pastinya lebih unik di banding yang lain
+        </p>
+
+        <h2>Meet Our Founders</h2>
+        <div class="founders">
+            <div class="founder">
+                <img src="foto gweh.jpg" alt="Founder 1">
+                <h3>Dewa Putu Atma Dewantara</h3>
+                <p>Jabatan: CEO & the brain of the company </p>
+                <p>seorang pria tampan yang cool bet tidak pernah tantrum dan selalu tepat waktu</p>
+            </div>
+            <div class="founder">
+                <img src="foto china.jpg" alt="Founder 2">
+                <h3>mustikasari yahya</h3>
+                <p>seorang wanita dengan jokes bapak bapak</p>
+            </div>
+            <div class="founder">
+                <img src="foto natasya.jpg" alt="Founder 3">
+                <h3>natasya azrielia pachsya</h3>
+                <p>Jabatan: designer </p>
+                <p>seorang pendiam,pasif namun aktif dalam hal lain</p>
+            </div>
+            <div id="loader">
+                <img src="logo.jpg" alt="Logo Dnatic" class="loading-logo">
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; OnProgress Website By Fasilkom Unsika Student.</p>
+        </div>
+    </footer>
+    <script>
+        window.onload = function() {
+            const logoImg = document.querySelector('.logo img');
+            logoImg.classList.add('rotate');
+    
+            // Hapus kelas 'rotate' setelah animasi selesai
+            setTimeout(function() {
+                logoImg.classList.remove('rotate');
+            }, 1000); // 1000 ms = 1 detik (sesuai dengan durasi transisi)
+        };
+        window.addEventListener('load', function() {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500); // Menghilangkan loader setelah transisi selesai
+    });
+    </script>
+</body>
+</html>

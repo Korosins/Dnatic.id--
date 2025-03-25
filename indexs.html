@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Musik</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+#loader {
+    position: fixed; /* Menempatkan loader di atas konten halaman */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Latar belakang putih */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Memastikan loader berada di atas semua elemen lain */
+    transition: opacity 0.5s ease-in-out; /* Efek transisi untuk memudar */
+}
+
+.loading-logo {
+    width: 100px;
+    animation: beat 1s ease-in-out infinite; /* Animasi detak */
+    transform-origin: center; /* Titik pusat transformasi */
+}
+
+@keyframes beat {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(designlagulagu.jpg);
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Header styles */
+header {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+}
+
+header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+        max-width: 100px; 
+        }
+
+.logo img {
+        width: 100%;
+        height: auto;
+        border-radius: 40px;
+        }
+
+header h1 {
+    font-size: 2em;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    font-size: 1.2em;
+}
+
+nav ul li a {
+    color: white;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+}
+
+/* Main section styles */
+main {
+    padding: 40px 0;
+    background-image:url(designlagulagu.jpg);
+    background-size: cover;
+}
+
+.music-library h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.song-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.song-item {
+    background-color: grey;
+    padding: 10px;
+    border-radius: 30px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.song-item:hover {
+    transform: scale(1.10);
+}
+
+.song-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.song-info h3 {
+    font-size: 1.4em;
+    margin-bottom: 70px;
+
+}
+.song-info p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+
+}
+
+.play-btn {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+
+}
+
+.play-btn:hover {
+    background-color: grey;
+}
+
+
+/* Footer styles */
+footer {
+    background-image: url(designlagulagu.jpg);
+    background-size: cover;
+    color: black;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+.description-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    background-image: url(designlagulagu.jpg);
+    background-size: cover;
+    border-radius: 8px;
+    width: 80%; /* Sesuaikan lebar sesuai kebutuhan */
+}
+
+.description-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.genre-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.genre-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.genre-button:hover {
+    background-color: grey;
+}
+
+.logo img {
+    width: 100px; /* Sesuaikan ukuran logo */
+    height: auto;
+    border-radius: 40px;
+    position: relative; /* Penting untuk animasi */
+    transition: transform 2s ease-in-out, left 2s ease-in-out; /* Transisi untuk putar dan gerak */
+    left: 0; /* Posisi awal logo */
+}
+
+.logo img.animate {
+    transform: rotate(360deg);
+    left: 100%; /* Pindahkan ke tengah */
+    transform-origin: center; /* Pusat rotasi */
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+        <div class="logo">
+            <img src="logo.jpg" alt="logo dnatic.id">
+        </div>
+            <h1>List Rekomendasi Musik</h1>
+            <nav>
+                <ul>
+                    <li><a href="about.html">about us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="music-library">
+            <h2>Rekomendasi teratas</h2>
+            <div class="song-list">
+                <div class="song-item">
+                    <img src="wakingup.jpeg" alt="Cover album 1">
+                    <div class="song-info">
+                        <h3>waking up together w u</h3>
+                        <p>Artist: adhito pranomo</p>
+                        <p>Genre: indie</p>
+                        <button class="play-btn" data-audio="">Play</button>
+                        <audio src="wakingupwu.mp3"></audio>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <img src="sesuatudijogja.jpeg" alt="Cover album 2">
+                    <div class="song-info">
+                        <h3>Sesuatu di jogja</h3>
+                        <p>Artist: adhitia sofyan </p>
+                        <p>Genre: Indie</p>
+                        <button class="play-btn" data-audio="">Play</button>
+                        <audio src="sesuatu di jogja.mp3"></audio>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <img src="semualagucinta.jpeg" alt="Cover album 3">
+                    <div class="song-info">
+                        <h3>semua lagu cinta terdengar sama</h3>
+                        <p>Artist: Hindia </p>
+                        <p>Genre: Pop, R&B</p>
+                        <button class="play-btn" data-audio="badsong.mp3">Play</button>
+                        <audio src="semualagucintaterdengarsama.mp3"></audio>
+                    </div>
+
+                    </section>
+                    <div class="genre-button-container">
+                        <a href="genre.html" class="genre-button">Lihat Semua Genre</a>
+                    </div>
+                </main>
+                <div class="description-container">
+                    <p>halaman ini berisi Rekomendasi teratas dari kami, jika kalian ingin melihat rekomendasi dari genre lain silahkan klik tombol genre
+                    </p>
+                </div>
+                </div>
+                </div>
+                </div>
+                <body>
+                    <div id="loader">
+                        <img src="logo.jpg" alt="Logo Dnatic" class="loading-logo">
+                    </div>
+                
+                    </body>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; OnProgress Website By Fasilkom Unsika Student.</p>
+        </div>
+    </footer>
+    <script>
+        const playButtons = document.querySelectorAll('.play-btn');
+
+        playButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const audioSrc = this.getAttribute('data-audio');
+                const audio = this.parentElement.querySelector('audio');
+
+                if (audio.paused) {
+                    audio.play();
+                    this.textContent = 'pause';
+                } else {
+                    audio.pause();
+                    this.textContent = 'Play';
+                }
+            });
+        });
+    </script>
+    <script>
+        window.onload = function() {
+            const logoImg = document.querySelector('.logo img');
+            logoImg.classList.add('animate');
+    
+            // Kembalikan ke posisi awal setelah animasi selesai
+            setTimeout(function() {
+                logoImg.classList.remove('animate');
+                logoImg.style.left = '0'; // Kembalikan ke posisi awal
+                logoImg.style.transform = 'rotate(0deg)'; // Kembalikan rotasi
+            }, 2000); // 2000 ms = 2 detik (sesuai dengan durasi transisi)
+        };
+    window.addEventListener('load', function() {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500); // Menghilangkan loader setelah transisi selesai
+    });
+</script>
+    </script>
+</body>
+</html>

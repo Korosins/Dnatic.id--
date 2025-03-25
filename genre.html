@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musik Berdasarkan Genre</title>
+    <style>
+#loader {
+    position: fixed; /* Menempatkan loader di atas konten halaman */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Latar belakang putih */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Memastikan loader berada di atas semua elemen lain */
+    transition: opacity 0.5s ease-in-out; /* Efek transisi untuk memudar */
+}
+
+.loading-logo {
+    width: 100px;
+    animation: beat 1s ease-in-out infinite; /* Animasi detak */
+    transform-origin: center; /* Titik pusat transformasi */
+}
+
+@keyframes beat {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    background-size: cover;
+    color: #333;
+}
+
+header {
+    background-image:url(bgalatmusik.jpg);
+    background-size: cover;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.genre-section {
+    background-image: url(bgalatmusik.jpg);
+    background-size: cover;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.genre-section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.genre-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.genre-list a {
+    background-color: black;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.genre-list a:hover {
+    background-color: black;
+}
+
+.song-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.song-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px;
+}
+
+.song-item h3 {
+    margin-bottom: 10px;
+    color: black;
+}
+
+audio {
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="dnatic.html">Kembali ke Rekomendasi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="genre-section">
+            <h2>Semua Genre</h2>
+            <div class="genre-list">
+                <a href="genre.html#dangdut">dangdut</a>
+                <a href="genre.html#rock">Rock</a>
+                <a href="genre.html#pop">Pop</a>
+                <a href="genre.html#jazz">Jazz</a>
+                <a href="genre.html#reggae">reggae</a>
+                <a href="genre.html#indie">indie</a>
+                <a href="genre.html#country">country</a>
+                <a href="genre.html#blues">blues</a>
+                <a href="genre.html#hip-hop">hip-hop</a>
+                <a href="genre.html#R&B">R&B</a>
+                </div>
+        </section>
+
+        <section class="genre-section" id="dangdut">
+            <h2>dangdut</h2>
+            <div class="song-list">
+                <div class="song-item">
+                    <h3>Rungkad</h3>
+                    <audio src="rungkad.mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>Nemen</h3>
+                    <audio src="Nemen - Ndx Aka HipHop Dangdut version (lyrics).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>ikan dalam kolam</h3>
+                    <audio src="ARLIDA PUTRI FT DIKE SABRINA - IKAN DALAM KOLAM  (Official Live Music Video).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>Pecah seribu</h3>
+                    <audio src="Yeni Inka - PECAH SERIBU (Official MV) Hanya Dia Yang Ada Diantara Jantung Hati.mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>Sanes</h3>
+                    <audio src="GuyonWaton x Denny Caknan - SANES (Official Music Video).mp3" controls></audio>
+                </div>
+            </div>
+        </section>
+
+        <section class="genre-section" id="rock">
+            <h2>Rock</h2>
+            <div class="song-list">
+                <div class="song-item">
+                    <h3>kangen</h3>
+                    <audio src="Dewa 19 - Kangen (Official Audio).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>pupus</h3>
+                    <audio src="Dewa - Pupus  Official Music Video.mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>i love u bibeh</h3>
+                    <audio src="The Changcuters - I Love U Bibeh (Video Clip).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>anugrah terindah</h3>
+                    <audio src="ANDMESH  - ANUGERAH TERINDAH (OFFICIAL MUSIC VIDEO).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>roman picisan</h3>
+                    <audio src="Dewa - Roman Picisan  Official Music Video.mp3" controls></audio>
+                </div>
+            </div>
+        </section>
+
+        <section class="genre-section" id="pop">
+            <h2>Pop</h2>
+            <div class="song-list">
+                <div class="song-item">
+                    <h3>gadis sampul</h3>
+                    <audio src="HIVI! - Gadis Sampul (Official Lyric Video).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>monokrom</h3>
+                    <audio src="TULUS - Monokrom (Official Music Video).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>seandainya</h3>
+                    <audio src="Vierra - Seandainya (Official Music Video).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>resah</h3>
+                    <audio src="Resah.mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>rayuan perempuan gila</h3>
+                    <audio src="Nadin Amizah - Rayuan Perempuan Gila (Official Lyric Video).mp3" controls></audio>
+                </div>
+            </div>
+        </section>
+
+        <section class="genre-section" id="jazz">
+            <h2>Jazz</h2>
+            <div class="song-list">
+                <div class="song-item">
+                    <h3>menghujam jatungku</h3>
+                    <audio src="Tompi - Menghujam Jantungku (Official Music Video).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>sampai kapan</h3>
+                    <audio src="Mike Mohede - Sampai Kapan (Official Music Video).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>bye bye</h3>
+                    <audio src="RAISA - Bye Bye (Official Music Video).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>sepatu</h3>
+                    <audio src="TULUS - Sepatu (Official Music Video).mp3" controls></audio>
+                </div>
+                <div class="song-item">
+                    <h3>jangan pernah berubah</h3>
+                    <audio src="ST12 - Jangan Pernah Berubah  Official Video Clip.mp3" controls></audio>
+                </div>
+            </div>
+        </section>
+
+        <section class="genre-section" id="reggae">
+                <h2>reggae</h2>
+                <div class="song-list">
+                    <div class="song-item">
+                        <h3>serenada</h3>
+                        <audio src="Serenada.mp3" controls></audio>
+                    </div>
+                    <div class="song-item">
+                        <h3>siempere</h3>
+                        <audio src="Ras Muhamad - Siempre (as always).mp3" controls></audio>
+                    </div>
+                    <div class="song-item">
+                        <h3>kongkalikong</h3>
+                        <audio src="Tony Q Rastafara - Kongkalikong.mp3" controls></audio>
+                    </div>
+                    <div class="song-item">
+                        <h3>putra nusantara</h3>
+                        <audio src="Shaggydog Feat. @IwaKtheRockfish  - Putra Nusantara  (Official Video).mp3" controls></audio>
+                    </div>
+                    <div class="song-item">
+                        <h3>emansipasi</h3>
+                        <audio src="Emansipasi feat Dennis Brown - Ras Muhamad & Daddy T (lyric video).mp3" controls></audio>
+                    </div>
+                </div>
+                </section>
+
+        <section class="genre-section" id="Indie">
+                    <h2>Indie</h2>
+                    <div class="song-list">
+                        <div class="song-item">
+                            <h3>akad</h3>
+                            <audio src="Payung Teduh - Akad (Official Music Video).mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>celengan rindu</h3>
+                            <audio src="Celengan Rindu.mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>aramsa</h3>
+                            <audio src="Aramsa.mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>lampu merah</h3>
+                            <audio src="The Lantis - Lampu Merah (Official Lyric Video).mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>rumah ke rumah</h3>
+                            <audio src="Hindia - Rumah ke Rumah (Official Music Video).mp3" controls></audio>
+                        </div>
+                    </div>
+                    </section>
+
+        <section class="genre-section" id="hip-hop">
+                        <h2>hip-hop</h2>
+                        <div class="song-list">
+                            <div class="song-item">
+                                <h3>garam dan madu</h3>
+                                <audio src="Tenxi, Naykilla & Jemsii - Garam & Madu (Sakit Dadaku) (Official Music Video).mp3" controls></audio>
+                            </div>
+                            <div class="song-item">
+                                <h3>bad</h3>
+                                <audio src="YOUNG LEX - Bad Ft.Awkarin (Official MV).mp3" controls></audio>
+                            </div>
+                            <div class="song-item">
+                                <h3>O AJA YA KAN</h3>
+                                <audio src="YOUNG LEX - O Aja Ya Kan (Official MV).mp3" controls></audio>
+                            </div>
+                            <div class="song-item">
+                                <h3>jogja istemiwa</h3>
+                                <audio src="JOGJA ISTIMEWA (Official Klip).mp3" controls></audio>
+                            </div>
+                            <div class="song-item">
+                                <h3>Dat stick</h3>
+                                <audio src="Rich Brian - Dat $tick (Official Video).mp3" controls></audio>
+                            </div>
+                        </div>
+                        </section>
+
+        <section class="genre-section" id="country">
+                            <h2>country</h2>
+                            <div class="song-list">
+                                <div class="song-item">
+                                    <h3>galang rambu anarki</h3>
+                                    <audio src="Iwan Fals - Galang Rambu Anarki (Official Lyric Video).mp3" controls></audio>
+                                </div>
+                                <div class="song-item">
+                                    <h3>kupu kupu malam</h3>
+                                    <audio src="NOAH - Kupu-Kupu Malam (Official Audio).mp3" controls></audio>
+                                </div>
+                                <div class="song-item">
+                                    <h3>bengawan solo</h3>
+                                    <audio src="Gesang - Bengawan Solo Lyric.mp3" controls></audio>
+                                </div>
+                                <div class="song-item">
+                                    <h3>kolam susu</h3>
+                                    <audio src="Uncle Djink - Kolam Susu (Cover).mp3" controls></audio>
+                                </div>
+                                <div class="song-item">
+                                    <h3>tikus tikus kantor</h3>
+                                    <audio src="IWAN FALS - TIKUS TIKUS KANTOR [LIRIK].mp3" controls></audio>
+                                </div>
+                            </div>
+                        </section>
+
+        <section class="genre-section" id="R&B">
+                    <h2>R&B</h2>
+                    <div class="song-list">
+                        <div class="song-item">
+                            <h3>bukan cinta biasa</h3>
+                            <audio src="Afgan - Bukan Cinta Biasa (Official Music Video).mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>cinta dan rahasia</h3>
+                            <audio src="Yura Yunita ft. Glenn Fredly - Cinta dan Rahasia (Official Lyric Video).mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>pilihanku</h3>
+                            <audio src="GMS Live - Pilihanku (Official GMS Live).mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>kali kedua</h3>
+                            <audio src="Raisa - Kali Kedua (Official Music Video).mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>ragu</h3>
+                            <audio src="Rizky Febian - Ragu (Official Music Video).mp3" controls></audio>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="genre-section" id="blues">
+                    <h2>blues</h2>
+                    <div class="song-list">
+                        <div class="song-item">
+                            <h3>sabda alam</h3>
+                            <audio src="SABDA ALAM - ONCE MEKEL  Official Lyric Video  Cover from Chrisye.mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>gubahanku</h3>
+                            <audio src="Broery Marantika - Gubahan Ku (Official Audio).mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>lilin-lilin kecil</h3>
+                            <audio src="Chrisye - Lilin Lilin Kecil (Remastered Original '77 Rec.)  Lyric Video.mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>angin malam</h3>
+                            <audio src="Chrisye - Angin Malam (Official Music Video).mp3" controls></audio>
+                        </div>
+                        <div class="song-item">
+                            <h3>payung fantasi</h3>
+                            <audio src="Memes - Payung Fantasi (Video Lyric).mp3" controls></audio>
+                        </div>
+                        <div id="loader">
+                            <img src="logo.jpg" alt="Logo Dnatic" class="loading-logo">
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioElements = document.querySelectorAll('audio');
+    
+            audioElements.forEach(audio => {
+                audio.addEventListener('timeupdate', function() {
+                });
+    
+                audio.addEventListener('input', function() {
+                    this.currentTime = this.value;
+                });
+            });
+            window.addEventListener('load', function() {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500); // Menghilangkan loader setelah transisi selesai
+    });
+        });
+    </script>
+</body>
+</html>
